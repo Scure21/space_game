@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/build/",
-    filename: "project.bundle.js"
+    filename: "bundle.js"
   },
   resolve: {
     extensions: [".js", ".jsx"]
@@ -17,10 +17,6 @@ module.exports = {
   watch: true,
   module: {
     loaders: [
-      {
-        test: [/\.vert$/, /\.frag$/],
-        use: "raw-loader"
-      },
       {
         test: /\.js$/,
         loader: "babel-loader",
@@ -30,6 +26,14 @@ module.exports = {
         test: /\.jsx$/,
         loader: "babel-loader",
         exclude: /node_modules/
+      },
+      {
+        test: [/\.vert$/, /\.frag$/],
+        use: "raw-loader"
+      },
+      {
+        test: /\.scss$/,
+        use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
       }
     ]
   },
