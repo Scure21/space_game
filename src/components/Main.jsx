@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Canvas from "./canvas";
+import { Canvas } from "./canvas";
 
 export default class App extends Component {
   constructor(props) {
@@ -7,10 +7,15 @@ export default class App extends Component {
   }
   render() {
     return (
-      <div className="main">
-        <h1>Gameeeeeee</h1>
-        <script type="text/javascript" src="./canvas.js" />
-      </div>
+      <section className="container">
+        <div className="header">Header</div>
+        <div className="game">Game</div>
+        <div className="footer">
+          Brought to you with{" "}
+          <img src="assets/images/heart.png" className="footer-image" /> by
+          Stephanie Cure
+        </div>
+      </section>
     );
   }
 }

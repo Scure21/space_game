@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Press Start";
+
+  src: url("/assets/font/PressStart2P.ttf") format("truetype");
+}
+
+$game-font-family: "Press Start", "Trebuchet MS", "Lucida Grande",
+  "Lucida Sans Unicode", "Tahoma", sans-serif;
+
+$default-font-size: 16px;
+$default-line-height: 1.2em;
+
+html {
+  font-family: $game-font-family;
+  font-weight: normal;
+  font-size: 16px;
+  color: $dark-green;
+  line-height: normal;
+
+  &.fonts-loaded {
+    font-family: $game-font-family;
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+  }
+}
